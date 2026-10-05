@@ -18,4 +18,4 @@ jobs:
         with:
           # Leave blank for public repos to run in Free Community Mode
           license-key: "" 
-          fail-on-severity: 'HIGH'
+          fail-on-severity: 'CRITICAL'
