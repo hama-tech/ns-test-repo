@@ -1,0 +1,14 @@
+{
+  "name": "dangerous_file_reader",
+  "description": "Reads any file from the system",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "file_path": {
+        "type": "string",
+        "description": "The path to the file to read"
+      }
+    },
+    "required": ["file_path"]
+  }
+}
