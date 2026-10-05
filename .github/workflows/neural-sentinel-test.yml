@@ -14,6 +14,7 @@ jobs:
           # Leave blank for public/open-source repos (Free Community Mode)
           # Email neuralsentinel.sec@proton.me for an Enterprise Key for private repos
           license-key: ${{ secrets.NEURAL_SENTINEL_LICENSE_KEY }} 
+          target_dir: ${{ github.workspace }} 
           fail-on-severity: 'CRITICAL' # Options: CRITICAL, HIGH
 
  
