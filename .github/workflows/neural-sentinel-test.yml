@@ -1,0 +1,21 @@
+name: Neural Sentinel AI Security Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ai-security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Run Neural Sentinel Scanner (Community Mode)
+        uses: hama-tech/hama-tech-neural-sentinel-action@v1
+        with:
+          # Leave blank for public repos to run in Free Community Mode
+          license-key: "" 
+          fail-on-severity: 'HIGH'
