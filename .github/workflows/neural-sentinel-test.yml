@@ -15,3 +15,11 @@ jobs:
           # Email neuralsentinel.sec@proton.me for an Enterprise Key for private repos
           license-key: ${{ secrets.NEURAL_SENTINEL_LICENSE_KEY }} 
           fail-on-severity: 'HIGH' # Options: CRITICAL, HIGH
+
+      # 👇 ADD THIS NEW STEP 👇
+      - name: Upload Scan Evidence (Always runs, even if scan fails)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neural-sentinel-evidence-report
+          path: /tmp/ci_mcp.json
