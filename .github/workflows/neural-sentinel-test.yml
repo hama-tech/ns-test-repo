@@ -1,20 +1,10 @@
 name: Neural Sentinel AI Scan
-on: [push,pull_request]
-
+on: [push, pull_request]
 jobs:
   ai-security-scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-      
-      - name: Run Neural Sentinel Scanner
-        uses: hama-tech/hama-tech-neural-sentinel-action@main
+      - uses: actions/checkout@v4
+      - uses: hama-tech/hama-tech-neural-sentinel-action@v2
         with:
-          # Leave blank for public/open-source repos (Free Community Mode)
-          # Email neuralsentinel.sec@proton.me for an Enterprise Key for private repos
-          license-key: ${{ secrets.NEURAL_SENTINEL_LICENSE_KEY }} 
-          target_dir: ${{ github.workspace }} 
-          fail-on-severity: 'HIGH' # Options: CRITICAL, HIGH
-
- 
+          fail-on-severity: 'HIGH'
